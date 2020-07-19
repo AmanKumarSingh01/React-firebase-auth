@@ -19,8 +19,6 @@ class Home extends Component {
             })
     }
     render() {
-        console.log(this.props)
-        console.log(localStorage.getItem("token"))
         return (
             <div>
                 Home

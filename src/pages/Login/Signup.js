@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Card } from 'react-bootstrap'
 import { Link, withRouter } from 'react-router-dom'
 import firebase from 'firebase';
@@ -29,6 +29,14 @@ function Signup(props) {
             console.log(IsMatch)
         }
     }
+    useEffect(() => {
+        console.log("inside useEffect", props.uid);
+        if (props.uid) {
+            props.history.push({
+                pathname: '/home',
+            });
+        }
+    }, [props.uid])
     return (
         <div>
             < Card style = {
